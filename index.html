@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UppfinnarJohanna</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#start">Hoppa till innehåll</a>
+
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="logo" href="#top" aria-label="Till toppen">
+        <img src="img/logo_01.png" alt="UppfinnarJohanna logga" />
+      </a>
+
+      <nav class="nav" aria-label="Huvudmeny">
+        <button
+          class="hamburger"
+          type="button"
+          aria-label="Öppna meny"
+          aria-expanded="false"
+          aria-controls="mobileOverlay"
+          id="hamburgerBtn"
+        >
+          <span class="hamburger-lines" aria-hidden="true"></span>
+        </button>
+
+        <div class="nav-links" aria-label="Meny desktop">
+          <a href="#bockerna">Böckerna</a>
+          <a href="#filmerna">Filmerna</a>
+          <a href="#skapande-skola">Skapande Skola</a>
+          <a href="#bokskaparna">Bokskaparna</a>
+          <a href="#annat-kul">Annat kul</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBIL OVERLAY (täcker allt) -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true" data-open="false">
+    <button class="mobile-overlay-backdrop" type="button" aria-label="Stäng meny" data-close></button>
+
+    <div class="mobile-overlay-panel" role="dialog" aria-modal="true" aria-label="Meny">
+      <div class="mobile-overlay-top">
+        <div class="mobile-overlay-brand">
+          <img src="img/logo_01.png" alt="" aria-hidden="true" />
+          <span>Meny</span>
+        </div>
+        <button class="mobile-overlay-close" type="button" aria-label="Stäng meny" data-close>Stäng</button>
+      </div>
+
+      <ul class="mobile-menu-list">
+        <li><a class="mobile-link" href="#bockerna">Böckerna</a></li>
+        <li><a class="mobile-link" href="#filmerna">Filmerna</a></li>
+        <li><a class="mobile-link" href="#skapande-skola">Skapande Skola</a></li>
+        <li><a class="mobile-link" href="#bokskaparna">Bokskaparna</a></li>
+        <li><a class="mobile-link" href="#annat-kul">Annat kul</a></li>
+        <li><a class="mobile-link" href="#kontakt">Kontakt</a></li>
+      </ul>
+
+      <p class="mobile-overlay-hint">Tryck på ett val för att hoppa till rätt del.</p>
+    </div>
+  </div>
+
+  <main id="start">
+    <section class="section hero" id="hero" aria-label="Välkommen">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Hej! Jag heter UppfinnarJohanna och ska bli världens bästa uppfinnare! Det här är min plats på nätet!</h1>
+        </div>
+        <div class="hero-image">
+          <img src="img/uppfinnarjohanna_01.png" alt="UppfinnarJohanna" />
+        </div>
+      </div>
+    </section>
+
+  <section class="section s1" id="bockerna">
+  <div class="container">
+    <h2>Böckerna</h2>
+    <p>Här är alla böckerna i serien.</p>
+
+    <div class="book-grid">
+      <article class="book-card">
+        <img src="img/books/full fart uppfinnarjohanna ann-christine magnusson.jpg" alt="Full fart UppfinnarJohanna" loading="lazy">
+        <div class="book-title">Full fart UppfinnarJohanna</div>
+      </article>
+
+      <article class="book-card">
+        <img src="img/books/har kommer uppfinnarjohanna ann-christine magnusson.jpg" alt="Här kommer UppfinnarJohanna" loading="lazy">
+        <div class="book-title">Här kommer UppfinnarJohanna</div>
+      </article>
+
+      <article class="book-card">
+        <img src="img/books/upp och hoppa, uppfinnarjohanna ann-christine magnusson.jpg" alt="Upp och hoppa, UppfinnarJohanna" loading="lazy">
+        <div class="book-title">Upp och hoppa, UppfinnarJohanna</div>
+      </article>
+
+      <article class="book-card">
+        <img src="img/books/uppfinnarjohanna & kraftautomaten.jpg" alt="UppfinnarJohanna och kraftautomaten" loading="lazy">
+        <div class="book-title">UppfinnarJohanna och kraftautomaten</div>
+      </article>
+
+      <article class="book-card">
+        <img src="img/books/uppfinnarjohanna gar lucia ann-christine magnusson.jpg" alt="UppfinnarJohanna går lucia" loading="lazy">
+        <div class="book-title">UppfinnarJohanna går lucia</div>
+      </article>
+
+      <article class="book-card">
+        <img src="img/books/uppfinnarjohanna och huttan ann-christine magnusson.jpg" alt="UppfinnarJohanna och Huttan" loading="lazy">
+        <div class="book-title">UppfinnarJohanna och Huttan</div>
+      </article>
+
+      <article class="book-card">
+        <img src="img/books/uppfinnarjohanna och skramselmaskinen ann-christine magnusson.jpg" alt="UppfinnarJohanna och skrämselmaskinen" loading="lazy">
+        <div class="book-title">UppfinnarJohanna och skrämselmaskinen</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <section class="section s2" id="filmerna">
+  <div class="container">
+    <div class="filmerna-grid">
+
+      <div class="filmerna-text">
+                <h3>Filmerna</h3>
+        <p1>Se filmerna om UppfinnarJohanna på UR Play!</p1><br><br>
+
+        <a
+          class="filmerna-button"
+          href="https://urplay.se/serie/213803-uppfinnar-johanna"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Titta på UR Play
+        </a>
+      </div>
+
+      <div class="filmerna-media">
+        <img
+          src="img/uppfinnarjohanna-serien.jpg"
+          alt="TV-serien UppfinnarJohanna på UR Play"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <section class="section s3" id="skapande-skola">
+  <div class="container">
+    <div class="skapande-grid">
+
+      <div class="skapande-text">
+        <h3>Skapande skola för åk 1–3</h3>
+        <div class="subtitle">Problemlösning och uppfinnande!</div>
+
+        <p>
+          UppfinnarJohannas motto är, ”Funkar det inte på det ena sättet så funkar det på det andra”.
+          UppfinnarJohanna visar att vem som helst kan bli uppfinnare!
+        </p>
+
+        <p>
+          Med Johanna som inspiration jobbar vi i skolorna med kreativitet. Barnen får göra
+          samarbetsövningar, koncentrationsövningar och hitta lösningar på vardagliga problem.
+          Hur kan man göra? Vad behövs, kan man återanvända gamla delar, vad är strömkällan?
+        </p>
+
+        <p>
+          Vi uppmuntrar barnen att tänka utanför boxen och att tro på, och presentera sin idé.
+          Vår ambition är att varenda unge ska känna att de har en tanke, en röst, värd att lyssna på.
+        </p>
+
+        <p>
+          Om du är lärare eller rektor, eller kanske förälder med barn på lågstadiet, och tycker
+          att det här låter kul, hör av er till oss så berättar vi mer hur vi kan möjliggöra ett besök!
+        </p>
+
+        <p>Ha det fint tills vi ses!</p>
+
+        <div class="skapande-contact">
+          Hör av dig till
+          <a href="mailto:info@uppfinnarjohanna.se">
+            info@uppfinnarjohanna.se
+          </a>
+        </div>
+      </div>
+
+      <div class="skapande-image">
+        <img
+          src="img/uppfinnarjohanna-foto_01.jpg"
+          alt="UppfinnarJohanna arbetar kreativt med barn i skolan"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section s4" id="bokskaparna">
+  <div class="container">
+
+    <h2>Bokskaparna</h2>
+
+    <div class="bokskapare-grid">
+
+      <!-- Ann-Christine -->
+      <article class="bokskapare">
+        <div class="bokskapare-image">
+          <img
+            src="img/ann-christine-magnusson.jpg"
+            alt="Ann-Christine Magnusson"
+            loading="lazy"
+          >
+          <div class="photo-credit">© Foto: Ann-Charlotte Sandelin</div>
+        </div>
+
+        <div class="bokskapare-text">
+          <h3>Ann-Christine Magnusson</h3>
+          <p>
+            Ann-Christine Magnusson är författare och regissör.
+          </p>
+          <p>
+            UppfinnarJohanna föddes ur en tidigare karaktär, en uppfinnare som hjälpte
+            till att lösa vardagsproblem. När Ann-Christine fick i uppdrag att ta fram
+            en ny bokidé fick figuren nytt liv, nytt sammanhang och ett nytt namn – och
+            blev UppfinnarJohanna.
+          </p>
+          <p>
+            Att uppfinna och att skriva liknar varandra: båda handlar om att skapa något
+            som inte funnits förut. Den lusten hoppas Ann-Christine att Johanna ska
+            sprida vidare till barn.
+          </p>
+        </div>
+      </article>
+
+      <!-- Lovisa -->
+      <article class="bokskapare">
+        <div class="bokskapare-image">
+          <img
+            src="img/lovisa-lesse.jpg"
+            alt="Lovisa Lesse"
+            loading="lazy"
+          >
+          <div class="photo-credit">© Foto: Gunilla Lundström</div>
+        </div>
+
+        <div class="bokskapare-text">
+          <h3>Lovisa Lesse</h3>
+          <p>
+            Lovisa Lesse är illustratör och arbetar främst med barnböcker.
+          </p>
+          <p>
+            UppfinnarJohanna ligger Lovisa varmt om hjärtat. Johannas fokus och
+            problemlösningsglädje speglar Lovisas egen relation till skapande, och
+            uppfinnandet har funnits nära sedan barndomen.
+          </p>
+          <p>
+            Johannas utseende och miljöer är inspirerade av Lovisas egna minnen,
+            familj och platser hon vuxit upp på.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section s5" id="annat-kul">
+  <div class="container">
+    <h2>Annat kul</h2>
+
+    <div class="kul-grid">
+
+      <!-- På museum -->
+      <article class="kul-card">
+        <div class="kul-media">
+          <img
+            src="img/uppfinnarjohanna-arbetets-museum.jpg"
+            alt="UppfinnarJohanna på Arbetets Museum"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="kul-content">
+          <div class="kul-kicker">På Museum</div>
+          <p class="kul-text">
+            På Arbetets Museum i Norrköping finns ett helt våningsplan där Johanna tar barn och familj
+            på en upptäcksfärd genom historiska arbeten.
+          </p>
+
+          <a class="kul-button" href="https://www.arbetetsmuseum.se/utstallning/lilla-arbetets/" target="_blank" rel="noopener noreferrer">
+            Mer info
+          </a>
+        </div>
+      </article>
+
+      <!-- Pysselbok -->
+      <article class="kul-card">
+        <div class="kul-media">
+          <img
+            src="img/grejaochrita.webp"
+            alt="Pysselboken Greja och rita med UppfinnarJohanna"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="kul-content">
+          <div class="kul-kicker">Pysselbok</div>
+          <p class="kul-text">
+            UppfinnarJohanna har en egen pysselbok – full av idéer att greja, rita och hitta på.
+          </p>
+
+          <a class="kul-button" href="https://olika.nu/products/greja-och-rita-med-uppfinnarjohanna" target="_blank" rel="noopener noreferrer">
+            Mer info
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="kontakt">
+  <div class="container footer-grid">
+
+    <div class="footer-contact">
+      <h3>Kontakt</h3>
+
+      <p>
+        UppfinnarJohanna AB och UJ Produktion<br>
+        c/o Magnusson<br>
+        Flintbacken 4, 118 42 Stockholm
+      </p>
+
+      <p>
+        <a href="mailto:info@uppfinnarjohanna.nu">
+          info@uppfinnarjohanna.nu
+        </a>
+      </p>
+    </div>
+
+    <div class="footer-copy">
+      <p>© UppfinnarJohanna</p>
+    </div>
+
+  </div>
+</footer>
+
+  <script>
+    (function () {
+      const btn = document.getElementById("hamburgerBtn");
+      const overlay = document.getElementById("mobileOverlay");
+      if (!btn || !overlay) return;
+
+      const closeEls = overlay.querySelectorAll("[data-close]");
+      const links = overlay.querySelectorAll("a[href^='#']");
+
+      function isOpen() {
+        return overlay.getAttribute("data-open") === "true";
+      }
+
+      function setOpen(open) {
+        overlay.setAttribute("data-open", open ? "true" : "false");
+        overlay.setAttribute("aria-hidden", open ? "false" : "true");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        document.body.classList.toggle("menu-open", open);
+
+        if (open) {
+          // Fokus första länken
+          const first = overlay.querySelector("a");
+          if (first) first.focus();
+        } else {
+          btn.focus();
+        }
+      }
+
+      // Öppna/stäng
+      btn.addEventListener("click", () => setOpen(!isOpen()));
+      closeEls.forEach(el => el.addEventListener("click", () => setOpen(false)));
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setOpen(false);
+      });
+
+      // Säker navigering: stäng overlay, scrolla till rätt sektion
+      links.forEach(a => {
+        a.addEventListener("click", (e) => {
+          const href = a.getAttribute("href") || "";
+          if (!href.startsWith("#")) return;
+
+          e.preventDefault();
+
+          const id = href.slice(1);
+          const target = document.getElementById(id);
+          if (!target) {
+            // Fallback: uppdatera hash om element saknas
+            setOpen(false);
+            location.hash = href;
+            return;
+          }
+
+          // 1) stäng meny + lås upp body
+          setOpen(false);
+
+          // 2) scrolla efter att layout hunnit uppdateras
+          requestAnimationFrame(() => {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            history.pushState(null, "", "#" + id);
+          });
+        });
+      });
+
+      // Starta stängt
+      setOpen(false);
+    })();
+  </script>
+</body>
+</html>
