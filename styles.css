@@ -2,16 +2,21 @@
   --header-h: 76px;
   --maxw: 1100px;
 
-  /* NY PALETT */
+  /* Palette */
   --bg-hero: #f4eb7f;
   --bg-1: #abd7c6;
   --bg-2: #aab7da;
   --bg-3: #daa9c7;
   --bg-4: #f4eb7f;
-  --bg-5: #abd7c6; /* återanvänder paletten */
+  --bg-5: #abd7c6;
 
   --text: #111;
-  --white: #fff;
+
+  /* Logo sizing */
+  --logo-h-desktop: 90px;
+  --logo-h-mobile: 70px;
+  --logo-drop-desktop: 16px; /* how much it hangs below header */
+  --logo-drop-mobile: 12px;
 }
 
 *{ box-sizing: border-box; }
@@ -47,8 +52,9 @@ body{
   top: 0;
   z-index: 50;
   height: var(--header-h);
-  background: #fbcb00;              /* gul header */
+  background: #fbcb00;
   border-bottom: 1px solid rgba(0,0,0,0.12);
+  overflow: visible; /* allow logo to hang below */
 }
 
 .header-inner{
@@ -61,15 +67,21 @@ body{
   gap: 16px;
 }
 
+/* Logo (wide landscape image) */
 .logo{
   display: inline-flex;
-  align-items: center;
+  align-items: flex-end;
   text-decoration: none;
+  position: relative;
+  z-index: 60;
 }
 .logo img{
   display: block;
-  height: 44px;
+  height: var(--logo-h-desktop);
   width: auto;
+  max-width: min(460px, 52vw);
+  transform: translateY(var(--logo-drop-desktop));
+  transform-origin: left bottom;
 }
 
 /* Desktop nav */
@@ -90,12 +102,12 @@ body{
 .nav a{
   color: inherit;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
   padding: 8px 10px;
   border-radius: 12px;
 }
 .nav a:hover{
-  background: rgba(0,0,0,0.06);
+  background: rgba(0,0,0,0.08);
 }
 
 /* Hamburger */
@@ -107,7 +119,7 @@ body{
   border-radius: 12px;
   cursor: pointer;
 }
-.hamburger:hover{ background: rgba(0,0,0,0.06); }
+.hamburger:hover{ background: rgba(0,0,0,0.08); }
 
 .hamburger-lines{
   display: inline-block;
@@ -157,6 +169,11 @@ h2{
   margin: 0 0 12px 0;
   letter-spacing: -0.01em;
 }
+h3{
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
 p{
   margin: 0;
   font-size: 18px;
@@ -174,13 +191,6 @@ p{
   width: 100%;
   height: auto;
   display: block;
-}
-
-/* Footer */
-.footer{
-  background: #fff;
-  padding: 28px 0;
-  border-top: 1px solid rgba(0,0,0,0.08);
 }
 
 /* ===== Mobile overlay menu ===== */
@@ -214,11 +224,10 @@ body.menu-open{ overflow: hidden; }
   padding: 16px;
   overflow: auto;
 
-  /* “snygg”: ljus panel med mjuk färgkänsla */
   background:
     radial-gradient(1200px 600px at 20% 0%, rgba(251,203,0,0.22), rgba(255,255,255,0) 60%),
-    radial-gradient(900px 500px at 90% 20%, rgba(123,227,255,0.18), rgba(255,255,255,0) 55%),
-    radial-gradient(900px 600px at 20% 100%, rgba(255,139,209,0.16), rgba(255,255,255,0) 55%),
+    radial-gradient(900px 500px at 90% 20%, rgba(171,215,198,0.20), rgba(255,255,255,0) 55%),
+    radial-gradient(900px 600px at 20% 100%, rgba(170,183,218,0.20), rgba(255,255,255,0) 55%),
     #ffffff;
 
   box-shadow: 0 18px 70px rgba(0,0,0,0.28);
@@ -278,7 +287,7 @@ body.menu-open{ overflow: hidden; }
   padding: 16px 16px;
   border-radius: 18px;
   border: 1px solid rgba(0,0,0,0.08);
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.90);
   box-shadow: 0 10px 26px rgba(0,0,0,0.10);
 }
 
@@ -298,33 +307,7 @@ body.menu-open{ overflow: hidden; }
   opacity: 0.75;
 }
 
-/* Responsive */
-@media (max-width: 860px){
-  :root{ --header-h: 68px; }
-
-  .hero-grid{ grid-template-columns: 1fr; }
-  .logo img{ height: 40px; }
-
-  .nav-links{ display: none; }
-  .hamburger{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (min-width: 861px){
-  .mobile-overlay{ display: none; }
-}
-
-@media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior: auto; }
-  .mobile-overlay{ transition: none; }
-}
-
-
 /* ===== Böckerna ===== */
-
 .book-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -333,7 +316,7 @@ body.menu-open{ overflow: hidden; }
 }
 
 .book-card{
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.78);
   border: 1px solid rgba(0,0,0,0.10);
   border-radius: 18px;
   overflow: hidden;
@@ -352,11 +335,21 @@ body.menu-open{ overflow: hidden; }
   font-size: 16px;
 }
 
-@media (max-width: 860px){
-  .book-grid{ grid-template-columns: 1fr; }
-  .book-card .book-title{ font-size: 18px; }
+/* Ålders-etikett på bokkort */
+.book-meta{
+  padding: 0 12px 14px 12px;
+  margin-top: -6px;
 }
 
+.book-age{
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 860px){
+  .book-age{ font-size: 13px; }
+}
 
 /* ===== Filmerna ===== */
 .filmerna-grid{
@@ -369,25 +362,22 @@ body.menu-open{ overflow: hidden; }
 
 .filmerna-text h3{
   font-size: clamp(22px, 2.4vw, 30px);
-  margin: 0 0 14px 0;
+  margin: 0 0 10px 0;
   font-weight: 900;
 }
 
 .filmerna-button{
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 12px;
   padding: 14px 20px;
   border-radius: 999px;
   background: #000;
   color: #fff;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 16px;
 }
-
-.filmerna-button:hover{
-  opacity: 0.85;
-}
+.filmerna-button:hover{ opacity: 0.85; }
 
 .filmerna-media{
   border-radius: 20px;
@@ -395,24 +385,11 @@ body.menu-open{ overflow: hidden; }
   box-shadow: 0 14px 36px rgba(0,0,0,0.18);
   background: #000;
 }
-
 .filmerna-media img{
   width: 100%;
   height: auto;
   display: block;
 }
-
-/* Mobil */
-@media (max-width: 860px){
-  .filmerna-grid{
-    grid-template-columns: 1fr;
-  }
-
-  .filmerna-text h3{
-    font-size: 22px;
-  }
-}
-
 
 /* ===== Skapande skola ===== */
 .skapande-grid{
@@ -427,18 +404,15 @@ body.menu-open{ overflow: hidden; }
   font-size: 18px;
   line-height: 1.45;
 }
-
 .skapande-text h3{
   font-size: clamp(22px, 2.4vw, 30px);
   margin: 0 0 6px 0;
   font-weight: 900;
 }
-
 .skapande-text .subtitle{
   font-weight: 800;
   margin-bottom: 14px;
 }
-
 .skapande-text p{
   margin-bottom: 14px;
 }
@@ -448,12 +422,11 @@ body.menu-open{ overflow: hidden; }
   margin-top: 18px;
   padding: 18px 20px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.88);
   border: 2px dashed rgba(0,0,0,0.18);
   font-weight: 800;
   font-size: 18px;
 }
-
 .skapande-contact a{
   color: inherit;
   text-decoration: none;
@@ -466,25 +439,11 @@ body.menu-open{ overflow: hidden; }
   overflow: hidden;
   box-shadow: 0 14px 36px rgba(0,0,0,0.18);
 }
-
 .skapande-image img{
   width: 100%;
   height: auto;
   display: block;
 }
-
-/* Mobil */
-@media (max-width: 860px){
-  .skapande-grid{
-    grid-template-columns: 1fr;
-  }
-
-  .skapande-text{
-    font-size: 17px;
-  }
-}
-
-
 
 /* ===== Bokskaparna ===== */
 .bokskapare-grid{
@@ -500,10 +459,6 @@ body.menu-open{ overflow: hidden; }
   align-items: start;
 }
 
-.bokskapare-image{
-  position: relative;
-}
-
 .bokskapare-image img{
   width: 100%;
   height: auto;
@@ -512,14 +467,12 @@ body.menu-open{ overflow: hidden; }
   box-shadow: 0 14px 36px rgba(0,0,0,0.18);
 }
 
-/* Mycket liten, diskret fotokredit */
 .photo-credit{
   margin-top: 6px;
   font-size: 11px;
   opacity: 0.6;
 }
 
-/* Text */
 .bokskapare-text h3{
   margin: 0 0 8px 0;
   font-size: 22px;
@@ -532,18 +485,6 @@ body.menu-open{ overflow: hidden; }
   line-height: 1.45;
 }
 
-/* Mobil */
-@media (max-width: 860px){
-  .bokskapare{
-    grid-template-columns: 1fr;
-  }
-
-  .bokskapare-text p{
-    font-size: 16px;
-  }
-}
-
-
 /* ===== Annat kul ===== */
 .kul-grid{
   display: grid;
@@ -553,7 +494,7 @@ body.menu-open{ overflow: hidden; }
 }
 
 .kul-card{
-  background: rgba(255,255,255,0.80);
+  background: rgba(255,255,255,0.82);
   border: 1px solid rgba(0,0,0,0.10);
   border-radius: 22px;
   overflow: hidden;
@@ -562,9 +503,7 @@ body.menu-open{ overflow: hidden; }
   grid-template-rows: auto 1fr;
 }
 
-.kul-media{
-  background: rgba(0,0,0,0.06);
-}
+.kul-media{ background: rgba(0,0,0,0.06); }
 
 .kul-media img{
   width: 100%;
@@ -602,16 +541,7 @@ body.menu-open{ overflow: hidden; }
   font-weight: 900;
   font-size: 15px;
 }
-
-.kul-button:hover{
-  opacity: 0.86;
-}
-
-@media (max-width: 860px){
-  .kul-grid{
-    grid-template-columns: 1fr;
-  }
-}
+.kul-button:hover{ opacity: 0.86; }
 
 /* ===== Footer ===== */
 #kontakt{
@@ -656,14 +586,53 @@ body.menu-open{ overflow: hidden; }
   white-space: nowrap;
 }
 
-/* Mobil */
+/* Responsive */
 @media (max-width: 860px){
+  :root{
+    --header-h: 68px;
+  }
+
+  .hero-grid{ grid-template-columns: 1fr; }
+
+  .logo img{
+    height: var(--logo-h-mobile);
+    max-width: 68vw;
+    transform: translateY(var(--logo-drop-mobile));
+  }
+
+  .nav-links{ display: none; }
+  .hamburger{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book-grid{ grid-template-columns: 1fr; }
+  .book-card .book-title{ font-size: 18px; }
+
+  .filmerna-grid{ grid-template-columns: 1fr; }
+  .filmerna-text h3{ font-size: 22px; }
+
+  .skapande-grid{ grid-template-columns: 1fr; }
+  .skapande-text{ font-size: 17px; }
+
+  .bokskapare{ grid-template-columns: 1fr; }
+  .bokskapare-text p{ font-size: 16px; }
+
+  .kul-grid{ grid-template-columns: 1fr; }
+
   .footer-grid{
     grid-template-columns: 1fr;
     gap: 18px;
   }
+  .footer-copy{ opacity: 0.7; }
+}
 
-  .footer-copy{
-    opacity: 0.7;
-  }
+@media (min-width: 861px){
+  .mobile-overlay{ display: none; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  .mobile-overlay{ transition: none; }
 }
