@@ -351,6 +351,31 @@ body.menu-open{ overflow: hidden; }
   .book-age{ font-size: 13px; }
 }
 
+/* Info-ruta i bok-grid */
+.book-note{
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+  padding: 18px 16px;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: center;
+
+  display: grid;
+  place-items: center;
+  min-height: 90px;
+}
+
+/* Gör den lite större/lugnare på mobil */
+@media (max-width: 860px){
+  .book-note{
+    font-size: 18px;
+    padding: 100px 18px;
+  }
+}
+
 /* ===== Filmerna ===== */
 .filmerna-grid{
   display: grid;
